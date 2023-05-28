@@ -36,13 +36,13 @@ def success(flac_path, source, message):
 
 
 def error(flac_path, source, message):
-    message = f'[+] [{source}] {flac_path}：{message}'
+    message = f'[-] [{source}] {flac_path}：{message}'
     logger.error(message)
     print(f'{Colors.BRIGHT_RED}{message}{Colors.RESET}')
 
 
 def warning(flac_path, source, message):
-    message = f'[+] [{source}] {flac_path}：{message}'
+    message = f'[!] [{source}] {flac_path}：{message}'
     logger.warning(message)
     print(f'{Colors.BRIGHT_YELLOW}{message}{Colors.RESET}')
 
@@ -110,6 +110,36 @@ def validate_ototoy_order(flac):
             return 1, '标签顺序验证成功（Hires）'
     return 0, '标签顺序验证失败'
 
+block_types = {
+    0: 'STREAMINFO',
+    1: 'PADDING',
+    2: 'APPLICATION',
+    3: 'SEEKTABLE',
+    4: 'VORBIS COMMENT',
+    6: 'PICTURE'
+}
+
+def validate_mora_blocks(flac):
+    try:
+        blocks = flac.metadata_blocks
+        if blocks[0].code == 0 and blocks[1].code == 4 and blocks[2].code == 6 and blocks[3].code == 1:
+            return 1, '块顺序验证成功'
+        raise
+    except:
+        return 0, '块顺序验证失败'
+
+
+def validate_ototoy_blocks(flac):
+    try:
+        blocks = flac.metadata_blocks
+        if blocks[0].code == 0 and blocks[1].code == 4 and blocks[2].code == 3 and blocks[-2].code == 6 and blocks[-1].code == 1:
+            return 1, f'块顺序验证成功（{len(flac.metadata_blocks)}）'
+        elif blocks[0].code == 0 and blocks[1].code == 3 and blocks[2].code == 4 and blocks[3].code == 6 and blocks[4].code == 1:
+            return 1, f'块顺序验证成功（{len(flac.metadata_blocks)}）'
+        raise
+    except:
+        return 0, '块顺序验证失败'
+    
 
 os.system('')
 for root, dirs, files in os.walk('.'):
@@ -125,17 +155,18 @@ for root, dirs, files in os.walk('.'):
         if source == 'mora':
             code_padding, message_padding = validate_mora_padding(flac)
             code_order, message_order = validate_mora_order(flac)
-            if code_padding and code_order:
-                success(flac_path, 'mora', f'{message_padding}，{message_order}')
+            code_blocks, message_blocks = validate_mora_blocks(flac)
+            if code_padding and code_order and code_blocks:
+                success(flac_path, 'mora', f'{message_padding}，{message_order}，{message_blocks}')
             else:
-                error(flac_path, 'mora', f'{message_padding}，{message_order}')
+                error(flac_path, 'mora', f'{message_padding}，{message_order}, {message_blocks}')
         elif source == 'OTOTOY':
             code_padding, message_padding = validate_ototoy_padding(flac)
             code_order, message_order = validate_ototoy_order(flac)
-
-            if code_padding and code_order:
-                success(flac_path, 'OTOTOY', f'{message_padding}，{message_order}')
+            code_blocks, message_blocks = validate_ototoy_blocks(flac)
+            if code_padding and code_order and code_blocks:
+                success(flac_path, 'OTOTOY', f'{message_padding}，{message_order}，{message_blocks}')
             else:
-                error(flac_path, 'OTOTOY', f'{message_padding}，{message_order}')
+                error(flac_path, 'OTOTOY', f'{message_padding}，{message_order}, {message_blocks}')
 
 os.system('pause')
