@@ -1,7 +1,7 @@
 import os
 import re
 
-ignore_folders = ['Lyrics', 'Album', 'EP', 'Single', 'Live', 'Compilation', 'SPs', 'Digital Booklet']
+ignore_folders = ['Lyrics', 'Album', 'EP', 'Single', 'Live', 'Compilation', 'SPs', 'Digital Booklet', 'Purchase Receipt']
 recursive_ignore_dirs = ['_qobuz']
 non_recursive_ignore_dirs = ['_more']
 pattern_folder = r'.* - .* \(\d{4}\) \[(mora|OTOTOY|e-onkyo|qobuz||Bugs!|7digital)\] (\[.* .*\]|\[DSD.*\])$'

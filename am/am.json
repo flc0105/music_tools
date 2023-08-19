@@ -1,0 +1,594 @@
+{
+    "data": [
+        {
+            "id": "1287847734",
+            "type": "albums",
+            "href": "/v1/catalog/jp/albums/1287847734?l=ja",
+            "attributes": {
+                "copyright": "℗ 2017 PRIX",
+                "genreNames": [
+                    "J-Pop",
+                    "ミュージック",
+                    "アニメ"
+                ],
+                "releaseDate": "2017-09-27",
+                "isMasteredForItunes": true,
+                "upc": "4562250641434",
+                "artwork": {
+                    "width": 1600,
+                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                    "height": 1600,
+                    "textColor3": "333f44",
+                    "textColor2": "022d43",
+                    "textColor4": "355769",
+                    "textColor1": "001015",
+                    "bgColor": "fffeff",
+                    "hasP3": false
+                },
+                "url": "https://music.apple.com/jp/album/hush-a-by-little-girl/1287847734",
+                "playParams": {
+                    "id": "1287847734",
+                    "kind": "album"
+                },
+                "recordLabel": "PRIX",
+                "isCompilation": false,
+                "trackCount": 10,
+                "isPrerelease": false,
+                "audioTraits": [
+                    "lossless",
+                    "lossy-stereo"
+                ],
+                "isSingle": false,
+                "name": "Hush a by little girl",
+                "artistName": "鎖那",
+                "isComplete": true
+            },
+            "relationships": {
+                "artists": {
+                    "href": "/v1/catalog/jp/albums/1287847734/artists?l=ja",
+                    "data": [
+                        {
+                            "id": "774888719",
+                            "type": "artists",
+                            "href": "/v1/catalog/jp/artists/774888719?l=ja"
+                        }
+                    ]
+                },
+                "tracks": {
+                    "href": "/v1/catalog/jp/albums/1287847734/tracks?l=ja",
+                    "data": [
+                        {
+                            "id": "1287847735",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287847735?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": true,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 1,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 268845,
+                                "isVocalAttenuationAllowed": true,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704893",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "composerName": "MIKITO",
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287847735",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/%E3%81%95%E3%82%88%E3%81%AA%E3%82%89-%E3%83%86%E3%83%87%E3%82%A3%E3%83%99%E3%82%A2/1287847734?i=1287847735",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "さよなら、テディベア",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fa/a7/aa/faa7aa96-f101-2c72-4a89-db16d6fde326/mzaf_12311805017681497980.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287847736",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287847736?l=ja",
+                            "attributes": {
+                                "hasTimeSyncedLyrics": false,
+                                "albumName": "Hush a by little girl",
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 2,
+                                "durationInMillis": 239368,
+                                "releaseDate": "2017-09-27",
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704894",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "audioLocale": "ja",
+                                "composerName": "鎖那",
+                                "url": "https://music.apple.com/jp/album/%E9%8D%B5%E3%81%A3%E5%AD%90/1287847734?i=1287847736",
+                                "playParams": {
+                                    "id": "1287847736",
+                                    "kind": "song"
+                                },
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "鍵っ子",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9a/30/55/9a3055db-5568-879c-139c-0c6680435ee5/mzaf_4862699668877134010.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287848045",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287848045?l=ja",
+                            "attributes": {
+                                "hasTimeSyncedLyrics": false,
+                                "albumName": "Hush a by little girl",
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 3,
+                                "durationInMillis": 252585,
+                                "releaseDate": "2017-09-27",
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704895",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "audioLocale": "ja",
+                                "composerName": "鎖那 & 岸田勇気",
+                                "url": "https://music.apple.com/jp/album/%E3%81%B2%E3%81%AD%E3%81%8F%E3%82%8C/1287847734?i=1287848045",
+                                "playParams": {
+                                    "id": "1287848045",
+                                    "kind": "song"
+                                },
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "ひねくれ",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c1/d6/77/c1d67723-0ca3-09c1-722e-60e44ddd3778/mzaf_13027741640445716910.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287848228",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287848228?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": true,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 4,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 220506,
+                                "isVocalAttenuationAllowed": true,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704896",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "composerName": "鎖那",
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287848228",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/%E5%BD%BC%E5%A5%B3%E3%81%AF%E6%97%85%E3%81%AB%E5%87%BA%E3%82%8B/1287847734?i=1287848228",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "彼女は旅に出る",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b8/1e/e3/b81ee3c0-cb55-ade8-62c3-6ea037f322f9/mzaf_3974508301243781525.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287848816",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287848816?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": false,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 5,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 234777,
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704898",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "composerName": "鎖那",
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287848816",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/%E5%98%98%E3%81%A4%E3%81%8D%E3%82%A8%E3%83%9F%E3%83%AA%E3%83%BC/1287847734?i=1287848816",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "嘘つきエミリー",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/81/51/b0/8151b0f5-4f66-e905-44a0-38f60153821d/mzaf_9464243875408064570.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287849066",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287849066?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": false,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 6,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 173680,
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704899",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287849066",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/ginger-snaps/1287847734?i=1287849066",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": false,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "ginger snaps",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8d/c6/45/8dc64595-5153-4be5-086d-50dfc4304f5b/mzaf_5065607095133635957.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287849442",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287849442?l=ja",
+                            "attributes": {
+                                "hasTimeSyncedLyrics": false,
+                                "albumName": "Hush a by little girl",
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 7,
+                                "durationInMillis": 260058,
+                                "releaseDate": "2017-09-27",
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704900",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "audioLocale": "ja",
+                                "composerName": "鎖那",
+                                "url": "https://music.apple.com/jp/album/%E3%83%8B%E3%82%B2%E3%83%A9%E3%81%AE%E8%8A%B1%E6%9D%9F/1287847734?i=1287849442",
+                                "playParams": {
+                                    "id": "1287849442",
+                                    "kind": "song"
+                                },
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": false,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "ニゲラの花束",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/01/7a/85/017a8546-9e84-45e9-6787-5a5aaa2440c4/mzaf_16769537119366012685.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287849991",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287849991?l=ja",
+                            "attributes": {
+                                "hasTimeSyncedLyrics": true,
+                                "albumName": "Hush a by little girl",
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 8,
+                                "durationInMillis": 237075,
+                                "releaseDate": "2017-09-27",
+                                "isVocalAttenuationAllowed": true,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704902",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "audioLocale": "ja",
+                                "composerName": "TOKOTOKO",
+                                "url": "https://music.apple.com/jp/album/%E3%82%AA%E3%82%AA%E3%82%AB%E3%83%9F%E3%81%A8%E5%B0%91%E5%A5%B3/1287847734?i=1287849991",
+                                "playParams": {
+                                    "id": "1287849991",
+                                    "kind": "song"
+                                },
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "オオカミと少女",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d9/60/cd/d960cdb8-cda6-2837-673a-278bce85c4ed/mzaf_7402398310429230533.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287850453",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287850453?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": false,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 9,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 225270,
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704903",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "composerName": "鎖那",
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287850453",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/%E5%AE%9D%E7%9F%B3/1287847734?i=1287850453",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "宝石",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bc/3a/38/bc3a3870-1fa3-dc48-4b96-2fe83a9126e5/mzaf_2441266056355195085.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        },
+                        {
+                            "id": "1287850455",
+                            "type": "songs",
+                            "href": "/v1/catalog/jp/songs/1287850455?l=ja",
+                            "attributes": {
+                                "albumName": "Hush a by little girl",
+                                "hasTimeSyncedLyrics": false,
+                                "genreNames": [
+                                    "J-Pop",
+                                    "ミュージック",
+                                    "アニメ"
+                                ],
+                                "trackNumber": 10,
+                                "releaseDate": "2017-09-27",
+                                "durationInMillis": 195434,
+                                "isVocalAttenuationAllowed": false,
+                                "isMasteredForItunes": true,
+                                "isrc": "TCJPG1704905",
+                                "artwork": {
+                                    "width": 1600,
+                                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/07/08/eb070802-e416-8b76-d789-4fbd05f428bf/4562250641434_cover.jpg/{w}x{h}bb.jpg",
+                                    "height": 1600,
+                                    "textColor3": "333f44",
+                                    "textColor2": "022d43",
+                                    "textColor4": "355769",
+                                    "textColor1": "001015",
+                                    "bgColor": "fffeff",
+                                    "hasP3": false
+                                },
+                                "composerName": "鎖那",
+                                "audioLocale": "ja",
+                                "playParams": {
+                                    "id": "1287850455",
+                                    "kind": "song"
+                                },
+                                "url": "https://music.apple.com/jp/album/%E3%82%B7%E3%83%A5%E3%83%86%E3%83%AB%E3%83%B3/1287847734?i=1287850455",
+                                "discNumber": 1,
+                                "hasCredits": false,
+                                "isAppleDigitalMaster": true,
+                                "hasLyrics": true,
+                                "audioTraits": [
+                                    "lossless",
+                                    "lossy-stereo"
+                                ],
+                                "name": "シュテルン",
+                                "previews": [
+                                    {
+                                        "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b0/d2/b1/b0d2b16e-55f8-58b7-a25f-37db8af30b9c/mzaf_18361039610540374725.plus.aac.ep.m4a"
+                                    }
+                                ],
+                                "artistName": "鎖那"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
