@@ -79,15 +79,6 @@ for p in flac.pictures:
         print(f'{"width":40}{p.width}')
         print(f'{"height":40}{p.height}')
         print(f'{"depth":40}{p.depth}')
-        
-
-print(f'{"file_hash":40}{file_hash}')
-print(f'{"audio_md5":40}{md5}')
-print(f'{"sample_rate":40}{sample_rate} kHz')
-print(f'{"bits_per_sample":40}{bits_per_sample}')
-print(f'{"length":40}{length}')
-
-
 
 
 os.system('pause')
