@@ -69,4 +69,25 @@ print(f'{"vendor_string":40}{vendor_string}')
 print('\nTags')
 print('-' * 20)
 print('\n'.join(f'{k:40}{v}' for k, v in sorted_dict.items()))
+
+print('\nCover')
+print('-' * 20)
+for p in flac.pictures:
+    if p.type == 3:
+        print(f'{"mime":40}{p.mime}')
+        print(f'{"desc":40}{p.desc}')
+        print(f'{"width":40}{p.width}')
+        print(f'{"height":40}{p.height}')
+        print(f'{"depth":40}{p.depth}')
+        
+
+print(f'{"file_hash":40}{file_hash}')
+print(f'{"audio_md5":40}{md5}')
+print(f'{"sample_rate":40}{sample_rate} kHz')
+print(f'{"bits_per_sample":40}{bits_per_sample}')
+print(f'{"length":40}{length}')
+
+
+
+
 os.system('pause')
