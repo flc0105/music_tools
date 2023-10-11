@@ -1,3 +1,6 @@
+"""
+Rename music files to track number and title
+"""
 import os
 
 from mutagen import File

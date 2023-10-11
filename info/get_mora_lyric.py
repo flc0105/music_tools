@@ -1,23 +1,15 @@
 import base64
 import json
 import re
+import re
 import sys
+import urllib.parse
 
 import requests
 
 client = requests.Session()
 
-
-import re
-import requests
-
-import urllib.parse
-
-
-
-# search_url = f"https://xxx.com/search_lyrics?title={trackTitle}&artist={artist}&album={album}"
 search_url = f"https://mora.jp/getLyrics?_=1684138707614&materialNo=22563653"
-
 
 client.headers.clear()
 client.headers['Accept'] = '*/*'

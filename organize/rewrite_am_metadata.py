@@ -1,15 +1,18 @@
+"""
+Rewriting music file metadata with iTunes data (am.json)
+"""
 import json
 import locale
 import os
-import requests
 import subprocess
 import sys
 
+import requests
 from mutagen import File
 from mutagen.flac import Picture
 
 
-def new_padding(info):
+def new_padding():
     return 8192
 
 
@@ -18,7 +21,6 @@ data = json.loads(f.read())
 f.close()
 album = data['data'][0]
 tracks = data['data'][0]['relationships']['tracks']['data']
-
 
 p = subprocess.run('metaflac --remove-all --dont-use-padding *.flac', capture_output=True, check=True)
 stdout = str(p.stdout.strip(), locale.getdefaultlocale()[1])

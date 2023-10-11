@@ -1,3 +1,6 @@
+"""
+Organize and classify music files
+"""
 import json
 import os
 
