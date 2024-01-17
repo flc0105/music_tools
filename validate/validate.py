@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import logging
 import os
 import sys
@@ -5,21 +6,21 @@ from datetime import datetime
 
 from mutagen.flac import FLAC
 
-current_time = datetime.now()
-formatted_time = current_time.strftime("%Y%m%d_%H%M%S")
+# current_time = datetime.now()
+# formatted_time = current_time.strftime("%Y%m%d_%H%M%S")
 
-if '--nolog' in sys.argv:
-    logging.disable(logging.CRITICAL)
-    logging.getLogger().disabled = True
-else:
-    logging.basicConfig(
-        filename=f'{formatted_time}.log',
-        format='[%(asctime)s] %(levelname)s: %(message)s',
-        level=logging.DEBUG,
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
+# if '--nolog' in sys.argv:
+#     logging.disable(logging.CRITICAL)
+#     logging.getLogger().disabled = True
+# else:
+#     logging.basicConfig(
+#         filename=f'{formatted_time}.log',
+#         format='[%(asctime)s] %(levelname)s: %(message)s',
+#         level=logging.DEBUG,
+#         datefmt='%Y-%m-%d %H:%M:%S'
+#     )
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 
 class Colors:
@@ -31,13 +32,13 @@ class Colors:
 
 def success(flac_path, source, message):
     message = f'[+] [{source}] {flac_path}：{message}'
-    logger.info(message)
+    # logger.info(message)
     print(f'{Colors.BRIGHT_GREEN}{message}{Colors.RESET}')
 
 
 def error(flac_path, source, message):
     message = f'[-] [{source}] {flac_path}：{message}'
-    logger.error(message)
+    # logger.error(message)
     print(f'{Colors.BRIGHT_RED}{message}{Colors.RESET}')
 
 

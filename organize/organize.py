@@ -4,7 +4,6 @@ Organize and classify music files
 import json
 import os
 
-import requests
 from mutagen.flac import FLAC
 
 years = {}
