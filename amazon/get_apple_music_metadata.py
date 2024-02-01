@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 import json
 import re
 import time
+import sys
 
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
@@ -12,13 +14,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common import exceptions
 
-url = input('Input URL: ')
+if len(sys.argv) < 2:
+    print("Missing URL argument.")
+    sys.exit(1)
+
+url = ' '.join(sys.argv[1:])
 
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
 driver = webdriver.Chrome()
 driver.get(url)
-
 
 # Wait for the page to load completely
 wait = WebDriverWait(driver, 10)
@@ -54,7 +59,7 @@ page_title = driver.title
 if not page_title:
     page_title = int(time.time())
 
-# Save response bodies to a JSON file
+# Save response body to a JSON file
 file_name = f"{page_title}.json"
 
 response_body_json = json.loads(response_body_str)

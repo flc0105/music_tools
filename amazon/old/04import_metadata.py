@@ -53,7 +53,6 @@ for file in files:
             tags['composer'] = json_data.get('composer', '')
             tags['copyright'] = json_data.get('copyright', '')
             tags['date'] = process_date(json_data.get('date', ''))
-            # tags['date'] = json_data.get('date', '')
             tags['discnumber'] = json_data.get('discnumber', '')
             tags['disctotal'] = json_data.get('disctotal', '')
             tags['genre'] = json_data.get('genre', '')

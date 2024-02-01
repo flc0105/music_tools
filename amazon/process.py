@@ -13,40 +13,32 @@ from mutagen.flac import Picture
 
 
 def get_logger():
-    # 创建日志记录器
     logger = logging.getLogger()
-    # 设置日志级别
     logger.setLevel(logging.DEBUG)
-    # 创建控制台处理器和文件处理器
     console_handler = logging.StreamHandler()
     file_handler = logging.FileHandler('process.log')
-    # 配置控制台处理器和文件处理器的日志级别
     console_handler.setLevel(logging.INFO)
     file_handler.setLevel(logging.DEBUG)
-    # 创建日志记录的格式
     log_format = logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-    # 将格式应用于控制台处理器和文件处理器
     console_handler.setFormatter(log_format)
     file_handler.setFormatter(log_format)
-    # 将处理器添加到日志记录器
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
     return logger
 
 
-# 获取日志记录器
 logger = get_logger()
 
 json_file = next((f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.json')), None)
 if not json_file:
-    logger.error('JSON file not found.')
-    raise FileNotFoundError('JSON file not found.')
+    logger.error('Error: JSON file not found.')
+    sys.exit(1)
 
-logger.info('---------- Step 1: Backup original tags ----------')
+logger.info('---------- 1. Backup Original Tags ----------')
 
 files = sorted([f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.flac')])
 
-logger.info('Files to be processed: \n{}'.format('\n'.join(files)))
+logger.info('Files to process: \n{}'.format('\n'.join(files)))
 
 original_tags = []
 
@@ -58,17 +50,17 @@ for file in files:
     json_data = {key.lower(): value for key, value in data}
     original_tags.append(json_data)
 
-logger.info('Tags backup complete: \n{}'.format(original_tags))
+logger.info('Backup is completed.\n{}'.format(original_tags))
 
-logger.info('---------- Step 2: Remove metadata ----------')
+logger.info('---------- 2. Remove Metadata ----------')
 try:
-    p = subprocess.run('metaflac --remove-all --dont-use-padding *.flac', shell=True, check=True)  # capture_output=True
-    logger.info('Processing completed.')
-except subprocess.CalledProcessError as e:
+    subprocess.run('metaflac --remove-all --dont-use-padding *.flac', shell=True, check=True)
+    logger.info('Processing complete.')
+except subprocess.CalledProcessError:
     logger.error('Processing failure.')
     raise
 
-logger.info('---------- Step 3: Remove empty samples ----------')
+logger.info('---------- 3. Remove Empty Samples ----------')
 
 skip = {
     44.1: '286',
@@ -97,22 +89,22 @@ for file in files:
     logger.info(f"Executing command: {' '.join(command)}")
 
     try:
-        p = subprocess.run(' '.join(command), shell=True, check=True)  # capture_output=True
-        logger.info(f'Processing completed: {file}')
-    except subprocess.CalledProcessError as e:  # e.stderr.decode()
-        logger.error(f'Processing failed: {file}')
+        p = subprocess.run(' '.join(command), shell=True, check=True)
+        logger.info(f'Processing complete: {file}')
+    except subprocess.CalledProcessError:
+        logger.error(f'Processing failure: {file}')
         raise
 
-logger.info('Processing completed.')
+logger.info('Processing complete.')
 
-logger.info('---------- Step 4: Add tags ----------')
+logger.info('---------- 4. Add Tags ----------')
 
 
 def new_padding(padding):
     return 8192
 
 
-logger.info(f'Loading metadata from {json_file}')
+logger.info(f'Loading metadata from {json_file}.')
 f = open(json_file, 'rt', encoding='utf-8')
 data = json.loads(f.read())
 f.close()
@@ -130,7 +122,7 @@ cover_url = cover_url.replace('{w}', str(w)).replace('{h}', str(h))
 
 cover = 'cover.jpg'
 if not os.path.exists(cover):
-    logger.info(f'Requesting album cover from {cover_url}')
+    logger.info(f'Requesting album cover from {cover_url}.')
     response = requests.get(cover_url)
     with open(cover, 'wb') as f:
         f.write(response.content)
@@ -149,27 +141,18 @@ for i, file in enumerate(files, start=1):
     track_original_tags = original_tags[i - 1]
 
     if info.get('attributes', {}).get('trackNumber', '') != i:
-        logger.error('Error: Data anomaly, about to be withdrawn')
+        logger.error('Error: Data anomaly, about to be withdrawn.')
         sys.exit(1)
 
     track_attributes = info.get('attributes', {})
 
-    if track_attributes.get('isrc', '') != track_original_tags.get('isrc', ''):
-        logger.error('Error: isrc match failed.')
+    if track_attributes.get('isrc', '') != track_original_tags.get('isrc', '').replace('-', ''):
+        logger.error('Error: ISRC match failed.')
         sys.exit(1)
-
-    album_name = album_attributes.get('name', '')
-    if album_name.endswith(" - EP"):
-        release_type = "EP"
-    elif album_name.endswith(" - Single"):
-        release_type = "Single"
-    else:
-        release_type = "Album"
 
     tags['album'] = album_attributes.get('name', '').replace(' - Single', '').replace(' - EP', '').strip()
     tags['albumartist'] = album_attributes.get('artistName', '')
     tags['artist'] = track_attributes.get('artistName', '')
-    tags['audiolocale'] = track_attributes.get('audioLocale', '')
     tags['comment'] = track_original_tags.get('comment', '')
     tags['composer'] = track_attributes.get('composerName', '')
     tags['copyright'] = album_attributes.get('copyright', '')
@@ -179,7 +162,6 @@ for i, file in enumerate(files, start=1):
     tags['genre'] = track_attributes.get('genreNames', [''])[0]
     tags['isrc'] = track_attributes.get('isrc', '')
     tags['label'] = album_attributes.get('recordLabel', '')
-    tags['releasetype'] = release_type
     tags['title'] = track_attributes.get('name', '')
     tags['tracknumber'] = track_original_tags.get('tracknumber', '')
     tags['tracktotal'] = track_original_tags.get('tracktotal', '')
@@ -192,11 +174,11 @@ for i, file in enumerate(files, start=1):
     flac.clear_pictures()
     flac.add_picture(picture)
     flac.save(padding=new_padding)
-    logger.info(f'Processing completed: {file}')
+    logger.info(f'Processing complete: {file}')
 
 logger.info('Processing complete.')
 
-logger.info('---------- Step 5: Rename ----------')
+logger.info('---------- 5. Rename ----------')
 files = [f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.flac')]
 for file in files:
     flac = File(file)
@@ -209,7 +191,7 @@ for file in files:
     os.rename(file, filename)
     logger.info(f'{os.path.basename(file)} -> {filename}')
 
-logger.info('---------- Step 6: Categorization ----------')
+logger.info('---------- 6. Categorization ----------')
 
 
 def get_spec(audio):
