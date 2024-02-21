@@ -1,0 +1,25 @@
+[2024-02-20 16:16:43] INFO: ---------- 1. Backup Original Tags ----------
+[2024-02-20 16:16:43] INFO: Files to process: 
+01 千本桜 (feat. 初音ミク).flac
+[2024-02-20 16:16:43] INFO: Backup is completed.
+[{'album': '千本桜', 'albumartist': '黒うさP feat. Hatsune Miku', 'artist': '黒うさP feat. Hatsune Miku', 'comment': 'https://music.amazon.co.jp/albums/B007CK5KFG?trackAsin=B007CK5KZ6', 'copyright': '℗ 2011 ドワンゴ・ミュージックエンタテインメント\u3000第２事業部 / CFM inc. © 2011 ドワンゴ・ミュージックエンタテインメント\u3000第２事業部', 'year': '2012-02-28T15:00:00Z', 'discnumber': '1', 'disctotal': '1', 'genre': 'Pop', 'isrc': 'JP-E56-12-00583', 'label': 'KarenT', 'title': '千本桜 (feat. 初音ミク)', 'tracknumber': '1', 'tracktotal': '1'}]
+[2024-02-20 16:16:43] INFO: ---------- 2. Remove Metadata ----------
+[2024-02-20 16:16:43] INFO: Processing complete.
+[2024-02-20 16:16:43] INFO: ---------- 3. Remove Empty Samples ----------
+[2024-02-20 16:16:43] INFO: 01 千本桜 (feat. 初音ミク).flac has a sample rate of 44.1 kHz. Skipping the first 286 samples.
+[2024-02-20 16:16:43] INFO: Executing command: flac -5 --skip 286 --no-seektable "01 千本桜 (feat. 初音ミク).flac" -f
+[2024-02-20 16:16:44] INFO: Processing complete: 01 千本桜 (feat. 初音ミク).flac
+[2024-02-20 16:16:44] INFO: Processing complete.
+[2024-02-20 16:16:44] INFO: ---------- 4. Add Tags ----------
+[2024-02-20 16:16:44] INFO: Loading metadata from ‎千本桜 (feat. 初音ミク) - Single - 黒うさPのアルバム - Apple Music.json.
+[2024-02-20 16:16:44] INFO: Requesting album cover from https://is1-ssl.mzstatic.com/image/thumb/Music/24/55/d5/mzi.umvxbeuq.jpg/1500x1500bb.jpg.
+[2024-02-20 16:16:44] DEBUG: Starting new HTTPS connection (1): is1-ssl.mzstatic.com:443
+[2024-02-20 16:16:44] DEBUG: https://is1-ssl.mzstatic.com:443 "GET /image/thumb/Music/24/55/d5/mzi.umvxbeuq.jpg/1500x1500bb.jpg HTTP/1.1" 200 595628
+[2024-02-20 16:16:45] INFO: Files to process: 
+01 千本桜 (feat. 初音ミク).flac
+[2024-02-20 16:16:45] INFO: Processing complete: 01 千本桜 (feat. 初音ミク).flac
+[2024-02-20 16:16:45] INFO: Processing complete.
+[2024-02-20 16:16:45] INFO: ---------- 5. Rename ----------
+[2024-02-20 16:16:45] INFO: 01 千本桜 (feat. 初音ミク).flac -> 01-千本桜 (feat. 初音ミク).flac
+[2024-02-20 16:16:45] INFO: ---------- 6. Categorization ----------
+[2024-02-20 16:16:45] INFO: Processing complete.

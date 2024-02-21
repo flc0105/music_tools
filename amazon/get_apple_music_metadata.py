@@ -54,13 +54,15 @@ for item in logs:
 
 time.sleep(5)
 
+"""
 # Extract page title for file name
 page_title = driver.title
 if not page_title:
     page_title = int(time.time())
+"""
 
 # Save response body to a JSON file
-file_name = f"{page_title}.json"
+file_name = f"{int(time.time())}.json"
 
 response_body_json = json.loads(response_body_str)
 with open(file_name, 'w', encoding='utf-8') as file:
