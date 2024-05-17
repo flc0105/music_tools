@@ -153,7 +153,7 @@ for i, file in enumerate(files, start=1):
     tags['album'] = album_attributes.get('name', '').replace(' - Single', '').replace(' - EP', '').strip()
     tags['albumartist'] = album_attributes.get('artistName', '')
     tags['artist'] = track_attributes.get('artistName', '')
-    tags['comment'] = track_original_tags.get('comment', '')
+    tags['comment'] = track_original_tags.get('url', '')
     tags['composer'] = track_attributes.get('composerName', '')
     tags['copyright'] = album_attributes.get('copyright', '')
     # tags['date'] = track_attributes.get('releaseDate', '')
@@ -223,6 +223,7 @@ for root, dirs, files in os.walk('.'):
         artist = audio.get('albumartist', ['Unknown Artist'])[0]
         album_name = audio.get('album', ['Unknown Album'])[0]
         album = secure_filename(f'{artist} - {album_name}')
+        print(f'Processing: {flac_path}')
         year = get_year(audio)
         fmt = 'FLAC'
         spec = get_spec(audio)
