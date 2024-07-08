@@ -14,7 +14,7 @@ from mutagen.flac import Picture
 
 json_file = next((f for f in os.listdir('.') if os.path.isfile(f) and f.endswith('.json')), None)
 if not json_file:
-    logger.error('Error: JSON file not found.')
+    print('JSON file not found.')
     sys.exit(1)
 
 

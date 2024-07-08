@@ -18,6 +18,7 @@ tags = [
     'cnID',                            # TrackId
     # 'covr',                            # CoverArt
     'cprt',                            # Copyright
+    'desc',                            # Description
     'disk',                            # DiscNumber
     'geID',                            # GenreId
     'plID',                            # AlbumId
@@ -29,7 +30,6 @@ tags = [
     '©ART',                            # Artist
     '©alb',                            # Album
     '©day',                            # Date
-    '©des',                            # Description
     '©gen',                            # GenreName
     '©nam',                            # Title
     '©pub',                            # Publisher
