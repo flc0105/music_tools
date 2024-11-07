@@ -63,8 +63,6 @@ def get_source(flac):
             return 'mora'
         elif flac.tags.get('comment', [''])[0].startswith('Brought to you by OTOTOY.JP'):
             return 'OTOTOY'
-        elif flac.tags.get('COMMENT', [''])[0].startswith('[BTN:'):
-            return 'Bugs!'
         else:
             raise Exception('未识别的音源')
     except Exception as e:
@@ -144,22 +142,6 @@ def validate_ototoy_blocks(flac):
         return 0, '块顺序验证失败'
     
 
-def validate_bugs_padding(flac):
-    try:
-        actual_padding = get_padding_length(flac)
-    except Exception as e:
-        return 0, f'获取填充长度失败，{e}'
-    if actual_padding == 3996:
-        return 1, f'填充长度验证成功(3996)'
-    return 0, f'填充长度验证失败({actual_padding})'
-
-
-def validate_bugs_order(flac):
-    keys = list(flac.tags)
-    if keys[-1][0] == 'ALBUMARTIST':
-        return 1, '标签顺序验证成功'
-    return 0, '标签顺序验证失败'
-
 os.system('')
 for root, dirs, files in os.walk('.'):
     flac_files = [f for f in files if f.endswith('.flac')]
@@ -187,14 +169,5 @@ for root, dirs, files in os.walk('.'):
                 success(flac_path, 'OTOTOY', f'{message_padding}，{message_order}，{message_blocks}')
             else:
                 error(flac_path, 'OTOTOY', f'{message_padding}，{message_order}, {message_blocks}')
-
-        elif source == 'Bugs!':
-            code_order, message_order = validate_bugs_order(flac)
-            code_padding, message_padding = validate_bugs_padding(flac)
-            if code_padding and code_order:
-                success(flac_path, 'Bugs!', f'{message_padding}，{message_order}')
-            else:
-                error(flac_path, 'Bugs!', f'{message_padding}，{message_order}')
-
 
 os.system('pause')
