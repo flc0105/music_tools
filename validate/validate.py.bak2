@@ -6,6 +6,23 @@ from datetime import datetime
 
 from mutagen.flac import FLAC
 
+# current_time = datetime.now()
+# formatted_time = current_time.strftime("%Y%m%d_%H%M%S")
+
+# if '--nolog' in sys.argv:
+#     logging.disable(logging.CRITICAL)
+#     logging.getLogger().disabled = True
+# else:
+#     logging.basicConfig(
+#         filename=f'{formatted_time}.log',
+#         format='[%(asctime)s] %(levelname)s: %(message)s',
+#         level=logging.DEBUG,
+#         datefmt='%Y-%m-%d %H:%M:%S'
+#     )
+
+logger = logging.getLogger(__name__)
+
+
 class Colors:
     BRIGHT_GREEN = '\033[0;92m'
     BRIGHT_RED = '\033[0;91m'
@@ -15,17 +32,28 @@ class Colors:
 
 def success(flac_path, source, message):
     message = f'[+] [{source}] {flac_path}：{message}'
+    # logger.info(message)
     print(f'{Colors.BRIGHT_GREEN}{message}{Colors.RESET}')
 
 
 def error(flac_path, source, message):
     message = f'[-] [{source}] {flac_path}：{message}'
+    # logger.error(message)
     print(f'{Colors.BRIGHT_RED}{message}{Colors.RESET}')
 
 
 def warning(flac_path, source, message):
     message = f'[!] [{source}] {flac_path}：{message}'
+    logger.warning(message)
     print(f'{Colors.BRIGHT_YELLOW}{message}{Colors.RESET}')
+
+
+def get_valid_padding_length(base_number, seconds):
+    return base_number + (seconds // 10) * 18
+
+
+def get_padding_length(flac):
+    return flac.metadata_blocks[-1].length
 
 
 def get_source(flac):
@@ -43,36 +71,26 @@ def get_source(flac):
         raise Exception(f'识别音源失败：{e}')
 
 
-def get_padding_length(flac):
-    return flac.metadata_blocks[-1].length
-
-
-def get_mora_valid_padding_length(base_number, seconds):
-    return base_number + (seconds // 10) * 18
-
-
 def validate_mora_padding(flac):
     try:
         actual_padding = get_padding_length(flac)
     except Exception as e:
-        return 0, f'获取填充长度失败：{e}'
-    if actual_padding == 40:
-        return 1, f'填充长度验证成功(40)'
+        return 0, f'获取填充长度失败，{e}'
     base_numbers = [8244, 8258, 8288, 8302]
     for base_number in base_numbers:
-        padding = get_mora_valid_padding_length(base_number, flac.info.length)
+        padding = get_valid_padding_length(base_number, flac.info.length)
         if actual_padding == padding:
-            return 1, f'填充长度验证成功({base_number})'
-    return 0, f'填充长度验证失败({actual_padding})'
+            return 1, f'填充长度验证成功（{base_number}）'
+    return 0, f'填充长度验证失败（{actual_padding}）'
 
 
 def validate_mora_order(flac):
     keys = list(flac.tags)
     if keys[0][0] == 'ARTIST':
         if keys[-1][0] == '50dbf5a2-f864-5c17-be00-c36dfd3df7b4':
-            return 1, '标签顺序验证成功(50d)'
+            return 1, '标签顺序验证成功（50d）'
         elif keys[-1][0] == 'ff8ca75f-2d68-52eb-85d6-1580486025a4':
-            return 1, '标签顺序验证成功(ff8)'
+            return 1, '标签顺序验证成功（ff8）'
     return 0, '标签顺序验证失败'
 
 
@@ -80,10 +98,10 @@ def validate_ototoy_padding(flac):
     try:
         actual_padding = get_padding_length(flac)
     except Exception as e:
-        return 0, f'获取填充长度失败：{e}'
+        return 0, f'获取填充长度失败，{e}'
     if actual_padding == 8192:
-        return 1, f'填充长度验证成功(8192)'
-    return 0, f'填充长度验证失败({actual_padding})'
+        return 1, f'填充长度验证成功（8192）'
+    return 0, f'填充长度验证失败（{actual_padding}）'
 
 
 def validate_ototoy_order(flac):
@@ -92,7 +110,7 @@ def validate_ototoy_order(flac):
         if keys[-1][0] == 'comment':
             return 1, '标签顺序验证成功'
         elif keys[-1][0] == 'WAVEFORMATEXTENSIBLE_CHANNEL_MASK':
-            return 1, '标签顺序验证成功(HR)'
+            return 1, '标签顺序验证成功（Hires）'
     return 0, '标签顺序验证失败'
 
 block_types = {
@@ -118,9 +136,9 @@ def validate_ototoy_blocks(flac):
     try:
         blocks = flac.metadata_blocks
         if blocks[0].code == 0 and blocks[1].code == 4 and blocks[2].code == 3 and blocks[-2].code == 6 and blocks[-1].code == 1:
-            return 1, f'块顺序验证成功({len(flac.metadata_blocks)})'
+            return 1, f'块顺序验证成功（{len(flac.metadata_blocks)}）'
         elif blocks[0].code == 0 and blocks[1].code == 3 and blocks[2].code == 4 and blocks[3].code == 6 and blocks[4].code == 1:
-            return 1, f'块顺序验证成功({len(flac.metadata_blocks)})'
+            return 1, f'块顺序验证成功（{len(flac.metadata_blocks)}）'
         raise
     except:
         return 0, '块顺序验证失败'
@@ -130,7 +148,7 @@ def validate_bugs_padding(flac):
     try:
         actual_padding = get_padding_length(flac)
     except Exception as e:
-        return 0, f'获取填充长度失败：{e}'
+        return 0, f'获取填充长度失败，{e}'
     if actual_padding == 3996:
         return 1, f'填充长度验证成功(3996)'
     return 0, f'填充长度验证失败({actual_padding})'
@@ -141,7 +159,6 @@ def validate_bugs_order(flac):
     if keys[-1][0] == 'ALBUMARTIST':
         return 1, '标签顺序验证成功'
     return 0, '标签顺序验证失败'
-
 
 os.system('')
 for root, dirs, files in os.walk('.'):
