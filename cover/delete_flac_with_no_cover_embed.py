@@ -6,7 +6,7 @@ def delete(flac_path):
     try:
         audio = FLAC(flac_path)
         pictures = audio.pictures
-        if pictures.length == 0:
+        if len(pictures) == 0:
             os.remove(flac_path)
         print(f"已删除: {flac_path}")
     except Exception as e:
