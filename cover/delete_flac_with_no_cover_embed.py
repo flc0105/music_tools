@@ -8,7 +8,7 @@ def process_folder(folder_path):
     folder = Path(folder_path)
     flac_files = list(folder.glob('*.flac'))
 
-   for flac_file in flac_files:
+    for flac_file in flac_files:
         try:
             audio = FLAC(flac_file)
             pictures = audio.pictures
